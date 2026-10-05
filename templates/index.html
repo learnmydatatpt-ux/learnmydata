@@ -1,21 +1,103 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="LearnMyData — data-driven digital marketing services."><title>LearnMyData | Digital Marketing</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnMyData | Digital Marketing Services & Growth</title>
+<meta name="description" content="LearnMyData helps businesses grow with SEO, AEO, GEO, PPC, social media, content, web design and data-driven digital marketing.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="{{ request.url_root }}">
+<link rel="alternate" hreflang="en-IN" href="{{ request.url_root }}">
+<meta name="theme-color" content="#08a9dc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnMyData | Digital Marketing Services & Growth">
+<meta property="og:description" content="Data-driven SEO, AEO, GEO, PPC, social media, content and web marketing for ambitious businesses.">
+<meta property="og:url" content="{{ request.url_root }}">
+<meta property="og:image" content="{{ request.url_root.rstrip('/') }}{{ url_for('static', filename='logo.svg') }}">
+<meta property="og:image:alt" content="LearnMyData logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LearnMyData | Digital Marketing Services & Growth">
+<meta name="twitter:description" content="Data-driven digital marketing services designed to turn attention into measurable business growth.">
+<meta name="twitter:image" content="{{ request.url_root.rstrip('/') }}{{ url_for('static', filename='logo.svg') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"{{ request.url_root }}#organization",
+      "name":"LearnMyData",
+      "url":"{{ request.url_root }}",
+      "logo":"{{ request.url_root.rstrip('/') }}{{ url_for('static', filename='logo.svg') }}",
+      "description":"Data-driven digital marketing agency providing SEO, AEO, GEO, PPC, social media, content, web design and analytics.",
+      "sameAs":[
+        "https://www.facebook.com/learnmydata"
+      ]
+    },
+    {
+      "@type":"WebPage",
+      "@id":"{{ request.url_root }}#webpage",
+      "url":"{{ request.url_root }}",
+      "name":"LearnMyData | Digital Marketing Services & Growth",
+      "description":"Data-driven digital marketing services for businesses that want measurable growth.",
+      "isPartOf":{"@id":"{{ request.url_root }}#website"},
+      "about":{"@id":"{{ request.url_root }}#organization"},
+      "publisher":{"@id":"{{ request.url_root }}#organization"},
+      "inLanguage":"en-IN",
+      "dateModified":"2026-10-05"
+    },
+    {
+      "@type":"WebSite",
+      "@id":"{{ request.url_root }}#website",
+      "url":"{{ request.url_root }}",
+      "name":"LearnMyData",
+      "publisher":{"@id":"{{ request.url_root }}#organization"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"{{ request.url_root }}#breadcrumb",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"{{ request.url_root }}"}
+      ]
+    },
+    {
+      "@type":"Service",
+      "@id":"{{ request.url_root }}#digital-marketing-service",
+      "name":"Digital Marketing Services",
+      "provider":{"@id":"{{ request.url_root }}#organization"},
+      "serviceType":"Digital marketing",
+      "areaServed":"IN",
+      "audience":{"@type":"BusinessAudience","audienceType":"Small and growing businesses"}
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"{{ request.url_root }}#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"What digital marketing services does LearnMyData provide?","acceptedAnswer":{"@type":"Answer","text":"LearnMyData provides SEO, answer engine optimization (AEO), generative engine optimization (GEO), PPC and performance marketing, social media, content marketing, web design, conversion optimization, and analytics."}},
+        {"@type":"Question","name":"Who is LearnMyData for?","acceptedAnswer":{"@type":"Answer","text":"LearnMyData is designed for startups, small businesses, service companies and growing brands that need a measurable digital marketing strategy and clearer customer acquisition."}},
+        {"@type":"Question","name":"How does LearnMyData measure marketing performance?","acceptedAnswer":{"@type":"Answer","text":"The approach connects marketing activity to business goals using agreed KPIs, conversion tracking, channel reporting, experiments and ongoing optimization."}},
+        {"@type":"Question","name":"What is the first step to working with LearnMyData?","acceptedAnswer":{"@type":"Answer","text":"Start with a strategy conversation about your business, audience, current marketing performance and growth goals. LearnMyData then identifies the highest-priority opportunities and next steps."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
 <body>
 <nav><div class="wrap nav"><a class="brand" href="#top"><img src="{{ url_for('static', filename='logo.svg') }}" alt="LearnMyData logo"></a>
 <button class="menu" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Menu">☰</button>
-<div class="links"><a href="#services">Services</a><a href="#about">Why us</a><a href="#process">Process</a><a href="#contact">Contact</a><a class="pill" href="#contact">Start Growing</a></div></div></nav>
+<div class="links"><a href="{{ url_for('services') }}">Services</a><a href="{{ url_for('about') }}">Why us</a><a href="{{ url_for('process') }}">Process</a><a href="{{ url_for('faq') }}">FAQs</a><a href="#contact">Contact</a><a class="pill" href="#contact">Start Growing</a></div></div></nav>
 
 <main id="top">
-<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Data-driven digital marketing</div><h1>Make your brand <span>impossible to ignore.</span></h1>
-<p>LearnMyData helps ambitious businesses grow with performance marketing, SEO, social media, content, web experiences and analytics—connected to measurable business outcomes.</p>
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Digital marketing for measurable growth</div><h1>Digital marketing services <span>that grow with data.</span></h1>
+<p><strong>Bottom line:</strong> LearnMyData helps startups, small businesses, service companies and growing brands attract the right audience, convert more demand and make better marketing decisions with SEO, AEO, GEO, PPC, social media, content, web design and analytics.</p>
+<p class="hero-summary">Best for businesses that want one connected growth strategy instead of disconnected marketing tactics.</p>
 <div class="actions"><a class="btn primary" href="#contact">Get a free strategy call →</a><a class="btn secondary" href="#services">Explore services</a></div></div>
 <div class="showcase"><img src="{{ url_for('static', filename='logo.svg') }}" alt="LearnMyData"><div class="metrics"><div class="metric"><b>SEO</b><small>Search visibility</small></div><div class="metric"><b>PPC</b><small>Paid acquisition</small></div><div class="metric"><b>Social</b><small>Brand community</small></div><div class="metric"><b>Data</b><small>Smarter decisions</small></div></div></div></div></section>
 
-<section id="services" class="services"><div class="wrap"><div class="section-head"><div class="kicker">What we do</div><h2>One growth partner. Every digital channel.</h2><p>From first click to loyal customer, we build connected marketing systems around your goals.</p></div>
+<section id="services" class="services"><div class="wrap"><div class="section-head"><div class="kicker">What we do</div><h2>Digital marketing services for every stage of growth</h2><p>LearnMyData connects search, paid media, social, content, websites and analytics around clear business objectives.</p></div>
 <div class="grid6">
-<article class="card"><div class="icon">⌕</div><h3>SEO & Search</h3><p>Technical SEO, keyword strategy, content and authority building to attract high-intent organic traffic.</p></article>
+<article class="card"><div class="icon">⌕</div><h3>SEO, AEO & GEO</h3><p>Technical SEO, search intent, answer-focused content and AI-search visibility strategies that help customers find and understand your brand.</p></article>
 <article class="card"><div class="icon">↗</div><h3>Performance Marketing</h3><p>Conversion-focused paid campaigns built to turn ad spend into qualified leads and revenue.</p></article>
 <article class="card"><div class="icon">◎</div><h3>Social Media</h3><p>Strategy, creative, community and campaigns that make your brand memorable across social platforms.</p></article>
 <article class="card"><div class="icon">✦</div><h3>Content Marketing</h3><p>Useful, persuasive content that answers customer questions and creates demand for your brand.</p></article>
@@ -27,7 +109,7 @@
 <div class="about"><div class="kicker">Why LearnMyData</div><h2>Marketing that learns, adapts and compounds.</h2><p>Good marketing is not a collection of disconnected tactics. It is a feedback loop: attract the right audience, understand behavior, improve the experience and reinvest in what works.</p>
 <div class="checks"><div class="check"><b>✓</b><span><strong>Strategy first:</strong> every campaign starts with a clear business objective.</span></div><div class="check"><b>✓</b><span><strong>Full-funnel thinking:</strong> connect awareness, acquisition, conversion and retention.</span></div><div class="check"><b>✓</b><span><strong>Transparent reporting:</strong> focus on metrics that matter.</span></div></div><a class="btn primary" href="#contact">Talk about your goals →</a></div></div></section>
 
-<section id="process"><div class="wrap"><div class="section-head"><div class="kicker">Our process</div><h2>A simple path from idea to growth.</h2><p>Clear, collaborative and focused on learning quickly.</p></div><div class="steps">
+<section id="process"><div class="wrap"><div class="section-head"><div class="kicker">Our process</div><h2>How does LearnMyData turn marketing into measurable growth?</h2><p>We use a four-step feedback loop: understand the business, build the strategy, launch the work, then measure and improve it.</p></div><div class="steps">
 <div class="step"><div class="num">01 / DISCOVER</div><h3>Understand</h3><p>Goals, audience, market, current performance and opportunities.</p></div>
 <div class="step"><div class="num">02 / STRATEGIZE</div><h3>Plan</h3><p>Build the channel mix, creative direction, funnel and measurement plan.</p></div>
 <div class="step"><div class="num">03 / EXECUTE</div><h3>Launch</h3><p>Ship campaigns, content, landing pages and experiments with speed.</p></div>
@@ -36,11 +118,21 @@
 
 <section class="cta"><div class="wrap"><div class="cta-box"><div><h2>Ready to turn attention into growth?</h2><p>Tell us where you want to go. We'll help map the digital marketing path to get there.</p></div><a class="btn primary" href="#contact">Start the conversation →</a></div></div></section>
 
-<section id="contact" class="contact"><div class="wrap"><div class="section-head"><div class="kicker">Let's connect</div><h2>Build your next growth chapter.</h2><p>Share a little about your business and goals.</p></div>
+<section id="faq"><div class="wrap"><div class="section-head"><div class="kicker">Frequently asked questions</div><h2>Answers about digital marketing with LearnMyData</h2><p>Short answers to common questions about services, fit, measurement and getting started.</p></div>
+<div class="grid6">
+<article class="card"><h3>What digital marketing services does LearnMyData provide?</h3><p>SEO, AEO, GEO, PPC and performance marketing, social media, content marketing, web design, conversion optimization and analytics.</p></article>
+<article class="card"><h3>Who is LearnMyData for?</h3><p>Startups, small businesses, service companies and growing brands that need a measurable acquisition and growth strategy.</p></article>
+<article class="card"><h3>How is marketing performance measured?</h3><p>We connect agreed KPIs to conversion tracking, channel reporting, experiments and ongoing optimization so decisions are based on evidence.</p></article>
+<article class="card"><h3>What is the first step?</h3><p>Start with a strategy conversation about your business, audience, current performance and goals. We then prioritize the highest-value opportunities.</p></article>
+</div>
+<div class="section-head" style="margin-top:35px"><p><strong>Learn more:</strong> <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Google Search Central SEO Starter Guide</a> explains foundational search optimization practices.</p></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap"><div class="section-head"><div class="kicker">Let's connect</div><h2>Build your next growth chapter.</h2><p>LearnMyData works with businesses that want practical, data-informed digital marketing. Share your goals and we'll help identify the best next step.</p><p><small>Page updated: October 5, 2026 · LearnMyData owns and maintains this website and its marketing guidance.</small></p></div>
 <div class="contact-grid"><div class="contact-card"><h3>What can we help with?</h3><p>SEO, paid ads, social media, content, website conversion, analytics—or a complete digital marketing strategy.</p><div class="checks"><div class="check"><b>✓</b><span>Free initial growth discussion</span></div><div class="check"><b>✓</b><span>Practical recommendations</span></div><div class="check"><b>✓</b><span>Clear next steps</span></div></div></div>
 <form id="contactForm" class="contact-card"><div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your name"></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@company.com"></div><div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" required placeholder="Tell us about your goals..."></textarea></div><button class="btn primary" type="submit">Request a strategy call →</button><div id="notice" class="notice"></div></form></div></div></section>
 </main>
-<footer><div class="wrap footer"><div class="footer-logo"><img src="{{ url_for('static', filename='logo.svg') }}" alt="LearnMyData"></div><small>© 2026 LearnMyData. Digital marketing powered by data.</small></div></footer>
+<footer><div class="wrap footer"><div class="footer-logo"><img src="{{ url_for('static', filename='logo.svg') }}" alt="LearnMyData"></div><small>© 2026 LearnMyData. Digital marketing powered by data. · <a href="{{ url_for('faq') }}">FAQs</a> · <a href="{{ url_for('services') }}">Services</a> · <a href="{{ url_for('sitemap') }}">Sitemap</a></small></div></footer>
 <script>
 document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));
 document.getElementById('contactForm').addEventListener('submit', async e=>{
