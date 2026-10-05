@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+<rect width="800" height="520" fill="white"/>
+<g fill="none" stroke="#08a9dc" stroke-width="5" stroke-linecap="round">
+<path d="M255 165l58-26 57 25 55-35 54 37 52-16M222 218l67-20 55 30 55-25 59 36 47-15M214 277l76-24 55 34 54-25 60 39 48-14M290 139l-1 91M370 164l-12 64M425 129l-4 82M479 166l-13 74M347 228l-59 25M347 228l55 5M402 233l55 32M358 262l54-29M412 290l54-25"/>
+</g>
+<g fill="#08a9dc">
+<circle cx="255" cy="165" r="8"/><circle cx="313" cy="139" r="8"/><circle cx="370" cy="164" r="8"/><circle cx="425" cy="129" r="8"/><circle cx="479" cy="166" r="8"/><circle cx="531" cy="150" r="8"/>
+<circle cx="222" cy="218" r="8"/><circle cx="289" cy="198" r="8"/><circle cx="344" cy="228" r="9"/><circle cx="399" cy="203" r="8"/><circle cx="458" cy="239" r="8"/><circle cx="505" cy="224" r="8"/>
+<circle cx="214" cy="277" r="8"/><circle cx="290" cy="253" r="9"/><circle cx="345" cy="287" r="8"/><circle cx="399" cy="262" r="9"/><circle cx="459" cy="301" r="8"/><circle cx="507" cy="287" r="8"/>
+</g>
+<path d="M150 150c30-58 91-91 153-74 34 9 60 28 79 53-28-18-60-25-91-18-44 10-75 44-82 88-6 38 7 77 36 103-38-16-65-48-75-86-7-27-4-49 3-66-16 18-25 39-27 62-3 37 12 73 42 101-31 2-59-11-75-34-18-27-21-59-13-89 7-24 18-43 35-60-1-10 2-22 5-30z" fill="#08a9dc"/>
+<path d="M176 192c9-48 47-84 92-91 30-5 60 3 83 22-23-10-48-11-71-4-36 11-60 40-64 75-4 31 7 61 30 83-37-15-70-43-70-85z" fill="white"/>
+<g font-family="Arial, Helvetica, sans-serif" font-weight="700">
+<text x="565" y="175" font-size="82" fill="#08a9dc">L</text><text x="625" y="175" font-size="47" fill="#111">earn</text>
+<text x="565" y="267" font-size="84" fill="#d9151b">M</text><text x="636" y="267" font-size="47" fill="#111">y</text>
+<text x="565" y="360" font-size="84" fill="#08a9dc">D</text><text x="638" y="360" font-size="47" fill="#111">ata</text>
+</g></svg>
