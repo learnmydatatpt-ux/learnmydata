@@ -1,1 +1,22 @@
-REPLACE_ME
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+<title id="title">LearnMyData</title><desc id="desc">LearnMyData logo with a blue digital brain profile and Learn My Data wordmark</desc>
+<rect width="400" height="400" fill="#fff"/>
+<!-- digital head / brain -->
+<path fill="#08a9dc" d="M58 259c12-24 18-43 18-63 0-58 47-108 107-108 35 0 66 16 87 41-22-14-48-20-73-14-45 10-76 48-76 93 0 42 21 74 54 91-17 1-35-3-51-12l-7 18c-4 11-13 18-25 18H74c-11 0-19-7-19-17 0-8 1-16 3-24z"/>
+<path fill="#fff" d="M101 204c0-43 30-78 71-87 28-6 57 1 77 18-18-8-38-9-57-4-31 8-53 36-53 69 0 28 14 51 37 65-44-5-75-29-75-61z"/>
+<!-- network -->
+<g stroke="#08a9dc" stroke-width="3" fill="none" stroke-linecap="round">
+<path d="M122 179l34-19 27 18 27-26 31 20 22-17M112 218l39-24 32 10 29-18 31 22 24-4M127 252l35-25 31 22 28-18 31 21 18-9M155 160l-2 34M183 178l-1 29M210 152l-6 34M241 175l-8 33M151 194l-17 24M183 207l-22 20M212 186l21 22M231 208l18 27M162 227l-4 27M194 227l-2 31M222 228l-1 28"/>
+</g>
+<g fill="#08a9dc">
+<circle cx="122" cy="179" r="5"/><circle cx="156" cy="160" r="5"/><circle cx="183" cy="178" r="6"/><circle cx="210" cy="152" r="5"/><circle cx="241" cy="175" r="5"/><circle cx="263" cy="158" r="5"/>
+<circle cx="112" cy="218" r="5"/><circle cx="151" cy="194" r="6"/><circle cx="183" cy="204" r="6"/><circle cx="212" cy="186" r="5"/><circle cx="243" cy="208" r="5"/><circle cx="267" cy="204" r="5"/>
+<circle cx="127" cy="252" r="5"/><circle cx="162" cy="227" r="5"/><circle cx="193" cy="249" r="5"/><circle cx="221" cy="227" r="6"/><circle cx="252" cy="248" r="5"/>
+</g>
+<!-- wordmark -->
+<g font-family="Arial, Helvetica, sans-serif" font-weight="700">
+<text x="278" y="143" font-size="63" fill="#08a9dc">L</text><text x="322" y="143" font-size="33" fill="#111">earn</text>
+<text x="278" y="212" font-size="65" fill="#d9151b">M</text><text x="332" y="212" font-size="33" fill="#111">y</text>
+<text x="278" y="281" font-size="65" fill="#08a9dc">D</text><text x="333" y="281" font-size="33" fill="#111">ata</text>
+</g>
+</svg>
