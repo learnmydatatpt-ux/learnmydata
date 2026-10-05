@@ -6,6 +6,26 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.get("/services")
+def services():
+    return render_template("services.html")
+
+@app.get("/about")
+def about():
+    return render_template("about.html")
+
+@app.get("/process")
+def process():
+    return render_template("process.html")
+
+@app.get("/faq")
+def faq():
+    return render_template("faq.html")
+
+@app.get("/sitemap.xml")
+def sitemap():
+    return render_template("sitemap.xml"), 200, {"Content-Type": "application/xml"}
+
 @app.post("/contact")
 def contact():
     data = request.get_json(silent=True) or request.form
