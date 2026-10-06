@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarketMind — AI Digital Marketing</title>
+  <meta name="description" content="AI-powered digital marketing strategy, lead scoring and growth analytics.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#"><span class="brand-mark">M</span> MarketMind</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#ai">AI Lead Score</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#ai">Try AI Score →</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI-POWERED DIGITAL GROWTH</p>
+        <h1>Turn attention into <span>revenue.</span></h1>
+        <p class="hero-text">Performance marketing built around measurable growth. We combine creative strategy, funnel analytics and machine learning to find your next best customer.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#ai">Score a lead</a>
+          <a class="button secondary" href="#services">Explore services</a>
+        </div>
+        <div class="proof">
+          <div><strong>3.8×</strong><span>avg. ROAS</span></div>
+          <div><strong>42%</strong><span>lower CPL</span></div>
+          <div><strong>24/7</strong><span>AI insights</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="orb"></div>
+        <div class="signal-card">
+          <div class="signal-top"><span>CAMPAIGN SIGNAL</span><span class="live">● LIVE</span></div>
+          <h3>Conversion momentum</h3>
+          <div class="score">87<span>%</span></div>
+          <div class="bar"><i></i></div>
+          <p>High-intent traffic is accelerating.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <p class="eyebrow">WHAT WE DO</p>
+      <h2>Marketing that learns.</h2>
+      <div class="grid">
+        <article><span class="icon">↗</span><h3>Performance Ads</h3><p>Full-funnel paid search and social campaigns optimized around business outcomes.</p></article>
+        <article><span class="icon">◎</span><h3>Funnel Strategy</h3><p>Landing pages, CRO and lifecycle journeys designed to turn clicks into customers.</p></article>
+        <article><span class="icon">⌁</span><h3>AI Analytics</h3><p>Machine-learning signals that help your team prioritize the audiences most likely to convert.</p></article>
+      </div>
+    </section>
+
+    <section id="ai" class="ai-section">
+      <div class="ai-copy">
+        <p class="eyebrow">TENSORFLOW DEMO</p>
+        <h2>Predict your next <span>high-value lead.</span></h2>
+        <p>Adjust the campaign signals and let the TensorFlow model estimate conversion potential. This demo uses a lightweight neural network trained on synthetic data.</p>
+        <div class="model-badge">⚡ Python + TensorFlow + Flask</div>
+      </div>
+      <div class="score-panel">
+        <label>Ad quality <output id="ad_quality_v">80%</output><input id="ad_quality" type="range" min="0" max="100" value="80"></label>
+        <label>Landing page <output id="landing_page_v">75%</output><input id="landing_page" type="range" min="0" max="100" value="75"></label>
+        <label>Engagement <output id="engagement_v">70%</output><input id="engagement" type="range" min="0" max="100" value="70"></label>
+        <label>Purchase intent <output id="intent_v">82%</output><input id="intent" type="range" min="0" max="100" value="82"></label>
+        <label>Bounce risk <output id="bounce_risk_v">20%</output><input id="bounce_risk" type="range" min="0" max="100" value="20"></label>
+        <button id="scoreBtn" class="button primary full">Calculate lead score</button>
+        <div class="result" id="result"><span>ESTIMATED CONVERSION</span><strong>—</strong><small>Set your campaign signals</small></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div><p class="eyebrow">READY TO GROW?</p><h2>Build a smarter acquisition engine.</h2></div>
+      <a class="button primary" href="mailto:hello@marketmind.ai">Start a conversation →</a>
+    </section>
+  </main>
+
+  <footer>© 2026 MarketMind. Built with Python, Flask & TensorFlow.</footer>
+  <script>
+    const ids = ["ad_quality","landing_page","engagement","intent","bounce_risk"];
+    ids.forEach(id => {
+      const input = document.getElementById(id), output = document.getElementById(id + "_v");
+      input.addEventListener("input", () => output.textContent = input.value + "%");
+    });
+
+    document.getElementById("scoreBtn").addEventListener("click", async () => {
+      const payload = Object.fromEntries(ids.map(id => [id, Number(document.getElementById(id).value) / 100]));
+      const result = document.getElementById("result");
+      result.classList.add("loading");
+      try {
+        const response = await fetch("/api/score", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        result.innerHTML = "<span>ESTIMATED CONVERSION</span><strong>" + data.probability + "%</strong><small>" + data.label + "</small>";
+      } catch (error) {
+        result.innerHTML = "<span>ERROR</span><strong>—</strong><small>" + error.message + "</small>";
+      } finally {
+        result.classList.remove("loading");
+      }
+    });
+  </script>
+</body>
+</html>
