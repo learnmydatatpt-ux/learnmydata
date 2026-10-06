@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: learnmydata
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
-    autoDeploy: true
-    plan: free
-    branch: main
